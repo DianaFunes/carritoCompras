@@ -1,0 +1,57 @@
+html{
+  font-family: 'Mandali', sans-serif;
+  color:#2c2f2c;
+}
+
+header{
+  background-color: rgb(35, 35, 41);
+  color: aliceblue;
+  text-align: center;
+}
+#titulo{
+  background-color: #d5ffd7;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+}
+.lista{
+  width: 50%;
+  background-color: #c8e0f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.agregar{
+  background-color: #aed1ff;
+  width: 50%;
+
+}
+.agregar, .lista, .total {
+
+  padding: 20px;
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+h2, h3 {
+  margin: 0;
+}
+
+input, button {
+  margin-top: 5px;
+}

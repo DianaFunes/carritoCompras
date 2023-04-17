@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" href="imagenes/icon.png" sizes="50x50">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mandali&display=swap" rel="stylesheet">
+
+
+    <title>FRUTAS Y VERDURAS DIANIS</title>
+</head>
+<body>
+  <header class="row ">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top justify-content-center">
+  
+      <a href="" class="navbar-brand col">
+      <img src="imagenes/icon.png" alt="IconDD" id="imgIcon" width="50px"></img>
+    </a>  
+  </nav>
+</header>
+
+<section id="titulo">
+  <h3>FRUTAS Y VERDURAS DIANIS</h3>
+</section>
+
+  <div id="app">
+
+
+    <div class="lista">
+      <h2>Lista de Frutas</h2>
+      <ul>
+        <li v-for="fruta in frutas" :key="fruta.id">
+          <h3>{{ fruta.nombre }}</h3>
+          <div class="detalles">
+      
+            <input v-model.number="fruta.cantidad" type="number" placeholder="Cantidad">
+            <span>Precio por producto $ {{ fruta.precio }}</span>
+            <p>Precio total: {{ fruta.cantidad * fruta.precio }}</p>
+            <button @click="quitarFruta(fruta)">x</button>
+          </div>
+        </li>
+      </ul>
+      
+    <div class="total">
+      <h4>Cantidad de frutas: {{ calcularCantidad() }}</h5>
+      <h4>Total: {{ calcularTotal() }}</h4>
+      <h5>Iva: {{ calcularIva() }}</h5>
+      <h5>Toal con iva: {{ con() }}</h5>
+    </div>
+
+  </div>
+
+  <div class="agregar">
+    <h2>Agregar Fruta</h2>
+    <input v-model="nuevaFruta.nombre" placeholder="Nombre de la fruta">
+    <h4>Cantidad</h4>
+    <input v-model.number="nuevaFruta.cantidad" type="number" placeholder="Cantidad">
+    <h4>Precio</h4>
+    <input v-model.number="nuevaFruta.precio" type="number" step="0.1" placeholder="Precio">
+    <button @click="agregarFruta">Agregar</button>
+  </div>
+    </div>
+
+
+
+  <script src="js/vue.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
